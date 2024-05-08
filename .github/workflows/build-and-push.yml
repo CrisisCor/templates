@@ -31,7 +31,7 @@ jobs:
       run: docker login -u ${{ secrets.user }} -p ${{ secrets.pass }}
       
     - name: Build Docker image
-      run: docker build -t ${{ inputs.repo-user }}/hello-world:${{ secrets.pass }} .
+      run: docker build -t ${{ inputs.repo-user }}/hello-world:${{ inputs.tag }} .
 
     - name: Run Trivy vulnerability scanner in repo mode
       uses: aquasecurity/trivy-action@master
