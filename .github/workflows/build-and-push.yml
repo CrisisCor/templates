@@ -45,5 +45,5 @@ jobs:
         sarif_file: 'trivy-results.sarif'
       
     - name: Push Docker image to Docker Hub
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/hello-world:${{ inputs.tag }}
+      run: docker push ${{ secrets.user }}/hello-world:${{ inputs.tag }}
 
