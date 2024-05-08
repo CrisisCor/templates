@@ -6,6 +6,9 @@ on:
       tag:
         required: true
         type: string
+    secrets:
+      user: ${{ secrets.DOCKERHUB_USERNAME }}
+      pass: ${{ secrets.DOCKERHUB_TOKEN }}
 
 jobs:
   build:
