@@ -79,7 +79,7 @@ jobs:
         EOF
 
     - name: generic command
-      run: ls -la
+      run: ls -la /.github/workflows
     #- uses: howlowck/create-repo-action@v1.0
      # with:
       #  repoName: ${{ inputs.repo-name }}
