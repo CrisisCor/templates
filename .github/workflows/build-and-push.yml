@@ -58,8 +58,7 @@ jobs:
       
     - uses: howlowck/create-repo-action@v1.0
       with:
-        repoName: 'my-new-app'
-        repoDescription: 'Mi nuevo repo'
+        repoName: ${{ inputs.repo-name }}
         repoVisibility: 'public'
         securityToken: ${{ secrets.token }}
 
