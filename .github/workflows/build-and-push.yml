@@ -58,7 +58,7 @@ jobs:
 
     - name: Create repo content
       run: |
-        cat <<EOF > .github/workflows/archivo.yaml
+        cat <<EOF > .github/workflows/mipipeline.yaml
         name: Hello Image CI pipeline
         on:
           push:
@@ -80,6 +80,12 @@ jobs:
 
     - name: generic command
       run: ls -la .github/workflows
+      
+    - name: zipping
+      run: zip -r content.zip .github
+
+    - name: generic command
+      run: ls -la
     #- uses: howlowck/create-repo-action@v1.0
      # with:
       #  repoName: ${{ inputs.repo-name }}
