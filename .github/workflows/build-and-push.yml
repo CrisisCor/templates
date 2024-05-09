@@ -58,6 +58,6 @@ jobs:
       with:
         name: 'test-repo-01'
         org: 'CrisisCor'
-        private: false
+        #private: false
         access-token: ${{ secrets.token }}
 
