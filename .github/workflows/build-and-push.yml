@@ -53,7 +53,7 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: docker push ${{ inputs.repo-user }}/hello-world:${{ inputs.tag }}
       
-    - uses: howlowck/create-repo@v1.0
+    - uses: howlowck/create-repo-action@v1.0
       with:
         repoName: 'my-new-app'
         repoDescription: 'Mi nuevo repo'
