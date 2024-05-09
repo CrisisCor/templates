@@ -59,25 +59,27 @@ jobs:
     - name: Create repo content
       run: |
         cat <<EOF > .github/workflows/archivo.yaml
-            name: Hello Image CI pipeline
-            on:
-              push:
-                branches:
-                  - main
-            
-            jobs:
-              build-and-push:
-                uses: CrisisCor/templates/.github/workflows/build-and-push.yml@main
-                with:
-                  tag: "latest"
-                  repo-user: "crisiscor"
-                  repo-name: "Microservice-back-01"
-                secrets:
-                  user: ${{ secrets.DOCKERHUB_USERNAME }}
-                  pass: ${{ secrets.DOCKERHUB_TOKEN }}
-                  token: ${{ secrets.TOKEN }}
-            EOF
+        name: Hello Image CI pipeline
+        on:
+          push:
+            branches:
+              - main
+        
+        jobs:
+          build-and-push:
+            uses: CrisisCor/templates/.github/workflows/build-and-push.yml@main
+            with:
+              tag: "latest"
+              repo-user: "crisiscor"
+              repo-name: "Microservice-back-01"
+            secrets:
+              user: ${{ secrets.DOCKERHUB_USERNAME }}
+              pass: ${{ secrets.DOCKERHUB_TOKEN }}
+              token: ${{ secrets.TOKEN }}
+        EOF
 
+    - name: generic command
+      run: ls -la
     #- uses: howlowck/create-repo-action@v1.0
      # with:
       #  repoName: ${{ inputs.repo-name }}
