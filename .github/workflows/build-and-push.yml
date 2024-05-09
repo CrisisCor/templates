@@ -82,7 +82,7 @@ jobs:
       run: ls -la content/.github/workflows
       
     - name: zipping
-      run: cd content $$ zip -r content.zip .github
+      run: cd content && zip -r content.zip .github
 
     - name: generic command
       run: ls -la
