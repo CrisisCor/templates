@@ -14,6 +14,9 @@ on:
         required: true
       pass:
         required: true
+      token:
+        required: true
+
 
 jobs:
   build:
@@ -49,4 +52,12 @@ jobs:
       
     - name: Push Docker image to Docker Hub
       run: docker push ${{ inputs.repo-user }}/hello-world:${{ inputs.tag }}
+      
+    - name: Create repository
+      uses: f1lander/create-repository-action@v1
+      with:
+        name: 'test-repo-01'
+        org: 'CrisisCor'
+        private: false
+        access-token: ${{ secrets.token }}
 
