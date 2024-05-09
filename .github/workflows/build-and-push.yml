@@ -53,11 +53,10 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: docker push ${{ inputs.repo-user }}/hello-world:${{ inputs.tag }}
       
-    - name: Create repository
-      uses: f1lander/create-repository-action@v1.0.2
+    - uses: howlowck/create-repo@v1.0
       with:
-        name: 'test-repo-01'
-        org: 'CrisisCor'
-        #private: false
-        access-token: ${{ secrets.token }}
+        repoName: 'my-new-app'
+        repoDescription: 'Mi nuevo repo'
+        repoVisibility: 'public'
+        securityToken: ${{ secrets.token }}
 
