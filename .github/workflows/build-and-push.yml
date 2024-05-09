@@ -54,7 +54,7 @@ jobs:
       run: docker push ${{ inputs.repo-user }}/hello-world:${{ inputs.tag }}
       
     - name: Create repository
-      uses: f1lander/create-repository-action@v1
+      uses: f1lander/create-repository-action@v1.0.2
       with:
         name: 'test-repo-01'
         org: 'CrisisCor'
