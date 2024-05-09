@@ -9,6 +9,9 @@ on:
       repo-user:
         required: true
         type: string
+      repo-name:
+        required: true
+        type: string
     secrets:
       user:
         required: true
