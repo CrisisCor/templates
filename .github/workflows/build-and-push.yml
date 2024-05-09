@@ -82,14 +82,14 @@ jobs:
       run: ls -la content/.github/workflows
       
     - name: zipping
-      run: zip -r content.zip content/.github
+      run: cd content $$ zip -r content.zip .github
 
     - name: generic command
       run: ls -la
       
     - uses: howlowck/create-repo-action@v1.0
       with:
-        zipPath: 'content.zip'
+        zipPath: 'content/content.zip'
         repoName: ${{ inputs.repo-name }}
         repoVisibility: 'public'
         securityToken: ${{ secrets.token }}
