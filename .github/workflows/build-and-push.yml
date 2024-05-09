@@ -73,9 +73,9 @@ jobs:
               repo-user: "crisiscor"
               repo-name: "Microservice-back-01"
             secrets:
-              user: ${{ secrets.DOCKERHUB_USERNAME }}
-              pass: ${{ secrets.DOCKERHUB_TOKEN }}
-              token: ${{ secrets.TOKEN }}
+              user: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+              pass: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+              token: xxxxxxxxxxxxxxxxxxxxxxxxx
         EOF
 
     - name: generic command
