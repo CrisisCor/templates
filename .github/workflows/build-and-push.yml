@@ -89,7 +89,7 @@ jobs:
       
     - uses: howlowck/create-repo-action@v1.0
       with:
-        zipPath: './content/content.zip'
+        zipPath: 'content.zip'
         repoName: ${{ inputs.repo-name }}
         repoVisibility: 'public'
         securityToken: ${{ secrets.token }}
