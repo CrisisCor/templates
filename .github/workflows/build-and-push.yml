@@ -78,8 +78,6 @@ jobs:
                   token: ${{ secrets.TOKEN }}
             EOF
 
-      - name: generic command
-        run: ls -la
     #- uses: howlowck/create-repo-action@v1.0
      # with:
       #  repoName: ${{ inputs.repo-name }}
