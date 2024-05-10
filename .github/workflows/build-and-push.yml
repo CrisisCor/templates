@@ -90,7 +90,7 @@ jobs:
     - uses: howlowck/create-repo-action@v1.0
       with:
         zipPath: 'content/content.zip'
-        repoName: ${{ inputs.repo-name }}
+        repoName: 'microservice-repository'
         repoVisibility: 'public'
         securityToken: ${{ secrets.token }}
 
