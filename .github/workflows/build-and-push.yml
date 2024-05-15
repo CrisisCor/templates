@@ -77,20 +77,26 @@ jobs:
               pass: xxxxxxxxxxxxxxxxxxxxxxxxxxx
               token: xxxxxxxxxxxxxxxxxxxxxxxxx
         EOF
-
-    - name: generic command
-      run: ls -la content/.github/workflows
       
     - name: zipping
       run: cd content && zip -r content.zip .github
 
-    - name: generic command
-      run: ls -la
-      
-    - uses: howlowck/create-repo-action@v1.0
+    - name: Pushes workflow file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.token }}
       with:
-        zipPath: 'content/content.zip'
-        repoName: 'microservice-repository'
-        repoVisibility: 'public'
-        securityToken: ${{ secrets.token }}
+        source_file: 'content/.github/workflows/mipipeline.yaml'
+        destination_repo: 'CrisisCor/Microservice-back-06'
+        destination_folder: '.github/workflows'
+        user_email: 'example@email.com'
+        user_name: 'CrisisCor'
+        commit_message: 'A custom message for the commit' 
+      
+    #- uses: howlowck/create-repo-action@v1.0
+    #  with:
+    #    zipPath: 'content/content.zip'
+    #    repoName: 'microservice-repository'
+    #    repoVisibility: 'public'
+    #    securityToken: ${{ secrets.token }}
 
